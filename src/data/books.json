@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "The Silent Forest",
+    "author": "Arif Rahman",
+    "description": "A mysterious journey through an enchanted forest filled with secrets.",
+    "category": "Story",
+    "available_quantity": 5,
+    "image_url": "/books/silent forest.png"
+  },
+  {
+    "id": 2,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A guide to writing clean, maintainable, and efficient code.",
+    "category": "Tech",
+    "available_quantity": 3,
+    "image_url": "/books/clean code.png"
+  },
+  {
+    "id": 3,
+    "title": "The Science of Everything",
+    "author": "Neil Carter",
+    "description": "An introduction to the fundamental concepts of science.",
+    "category": "Science",
+    "available_quantity": 4,
+    "image_url": "/books/The science of everything.png"
+  },
+  {
+    "id": 4,
+    "title": "Lost in Time",
+    "author": "Sara Ahmed",
+    "description": "A time-travel story filled with unexpected twists.",
+    "category": "Story",
+    "available_quantity": 6,
+    "image_url": "/books/lost in time.png"
+  },
+  {
+    "id": 5,
+    "title": "JavaScript Mastery",
+    "author": "John Doe",
+    "description": "Learn advanced JavaScript concepts and modern development techniques.",
+    "category": "Tech",
+    "available_quantity": 2,
+    "image_url": "https://picsum.photos/200?random=5"
+  },
+  {
+    "id": 6,
+    "title": "Physics Made Easy",
+    "author": "Dr. Emily Stone",
+    "description": "A simple explanation of complex physics topics.",
+    "category": "Science",
+    "available_quantity": 7,
+    "image_url": "https://picsum.photos/200?random=6"
+  },
+  {
+    "id": 7,
+    "title": "The Hidden Truth",
+    "author": "Tanvir Hasan",
+    "description": "A thriller uncovering secrets buried deep in society.",
+    "category": "Story",
+    "available_quantity": 5,
+    "image_url": "https://picsum.photos/200?random=7"
+  },
+  {
+    "id": 8,
+    "title": "React for Beginners",
+    "author": "Jane Smith",
+    "description": "A beginner-friendly guide to building apps with React.",
+    "category": "Tech",
+    "available_quantity": 4,
+    "image_url": "https://picsum.photos/200?random=8"
+  },
+  {
+    "id": 9,
+    "title": "Space Exploration",
+    "author": "Carl Johnson",
+    "description": "Discover the wonders of space and human exploration.",
+    "category": "Science",
+    "available_quantity": 3,
+    "image_url": "https://picsum.photos/200?random=9"
+  },
+  {
+    "id": 10,
+    "title": "Dream Chasers",
+    "author": "Nusrat Jahan",
+    "description": "A motivational story about chasing dreams and overcoming obstacles.",
+    "category": "Story",
+    "available_quantity": 6,
+    "image_url": "https://picsum.photos/200?random=10"
+  },
+  {
+    "id": 11,
+    "title": "Next.js in Action",
+    "author": "David Lee",
+    "description": "Build modern web applications using Next.js framework.",
+    "category": "Tech",
+    "available_quantity": 2,
+    "image_url": "https://picsum.photos/200?random=11"
+  },
+  {
+    "id": 12,
+    "title": "Biology Basics",
+    "author": "Dr. Ayesha Khan",
+    "description": "Understand the basics of biology in a simple way.",
+    "category": "Science",
+    "available_quantity": 5,
+    "image_url": "https://picsum.photos/200?random=12"
+  }
+]

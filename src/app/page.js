@@ -1,10 +1,43 @@
-import Banner from "@/components/Banner";
-import Image from "next/image";
+import Banner from "@/components/Banner";import books from "@/data/books.json";
 
 export default function Home() {
+  const featuredBooks = books.slice(0, 4);
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <Banner></Banner>
+      {/* Featured Books */}
+      <section className="text-black text-center">
+        <h2 className="text-3xl font-bold mb-6">
+          Featured Books
+        </h2>
+
+        <div className="grid md:grid-cols-4 gap-6 px-6">
+          {featuredBooks.map((book) => (
+            <div
+              key={book.id}
+              className="bg-white/5 border border-white/10 rounded-2xl p-4 hover:scale-105 transition"
+            >
+              <img
+                src={book.image_url}
+                alt={book.title}
+                className="h-40 w-full object-cover rounded-xl mb-3"
+              />
+
+              <h3 className="font-semibold">{book.title}</h3>
+              <p className="text-sm text-gray-400">{book.author}</p>
+
+              <span className="text-xs text-blue-400">
+                {book.category}
+              </span>
+
+              <button className="mt-3 w-full bg-black py-1 rounded-lg text-white">
+                View Details
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-10 px-3 bg-white dark:bg-black sm:items-start">
          <section className="max-w-6xl mx-auto text-center text-white mt-5">
 

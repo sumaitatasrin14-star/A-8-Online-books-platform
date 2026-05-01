@@ -7,7 +7,10 @@ const HomePage = () => {
 
       {/* Banner (only Home) */}
       <Banner />
-
+      <marquee className="bg-blue-500 text-white py-3 text-lg">
+        New Arrivals: Atomic Habits | Clean Code | The Alchemist |
+        Special Discount on Memberships 🔥
+      </marquee>
       {/* Featured Books Section */}
       <section className="max-w-6xl mx-auto text-center text-white mt-20">
 
