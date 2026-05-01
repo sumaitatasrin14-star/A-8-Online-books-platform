@@ -9,42 +9,76 @@ const HomePage = () => {
       <Banner />
 
       {/* Featured Books Section */}
-      <section className="text-center text-white">
-        <h2 className="text-3xl font-bold mb-6">
-          Featured Books
-        </h2>
+      <section className="max-w-6xl mx-auto text-center text-white mt-20">
 
-        <div className="grid md:grid-cols-4 gap-6 px-6">
-          <div className="bg-white/10 p-4 rounded-xl">Book 1</div>
-          <div className="bg-white/10 p-4 rounded-xl">Book 2</div>
-          <div className="bg-white/10 p-4 rounded-xl">Book 3</div>
-          <div className="bg-white/10 p-4 rounded-xl">Book 4</div>
-        </div>
-      </section>
+  {/* Title */}
+  <h2 className="text-4xl font-bold mb-4">
+    Why Choose <span className="text-blue-400">BookSphere</span>?
+  </h2>
 
-      {/* Extra Section 1 */}
-      <section className="text-center text-white px-6">
-        <h2 className="text-3xl font-bold mb-4">
-          Why Choose Us
-        </h2>
+  <p className="text-gray-400 mb-12 max-w-xl mx-auto">
+    A modern digital library platform designed for speed, simplicity, and convenience.
+  </p>
 
-        <p className="text-gray-400 max-w-xl mx-auto">
-          Fast book search, easy borrowing, and a modern digital library experience.
-        </p>
-      </section>
+  {/* Feature Cards */}
+  <div className="grid md:grid-cols-3 gap-6">
 
-      {/* Extra Section 2 */}
-      <section className="text-center text-white px-6">
-        <h2 className="text-3xl font-bold mb-4">
-          Popular Categories
-        </h2>
+    {/* Card 1 */}
+    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
+      <div className="text-3xl mb-3">🔍</div>
+      <h3 className="text-xl font-semibold">Fast Search</h3>
+      <p className="text-gray-400 text-sm mt-2">
+        Quickly find books by title, category, or author.
+      </p>
+    </div>
 
-        <div className="flex justify-center gap-4">
-          <span className="bg-blue-500 px-4 py-2 rounded-xl">Story</span>
-          <span className="bg-green-500 px-4 py-2 rounded-xl">Tech</span>
-          <span className="bg-purple-500 px-4 py-2 rounded-xl">Science</span>
-        </div>
-      </section>
+    {/* Card 2 */}
+    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
+      <div className="text-3xl mb-3">📚</div>
+      <h3 className="text-xl font-semibold">Easy Borrow</h3>
+      <p className="text-gray-400 text-sm mt-2">
+        Borrow books instantly with one click.
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
+      <div className="text-3xl mb-3">🔐</div>
+      <h3 className="text-xl font-semibold">Secure Login</h3>
+      <p className="text-gray-400 text-sm mt-2">
+        Safe authentication with protected routes.
+      </p>
+    </div>
+
+    {/* Card 4 */}
+    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
+      <div className="text-3xl mb-3">📂</div>
+      <h3 className="text-xl font-semibold">Category Filter</h3>
+      <p className="text-gray-400 text-sm mt-2">
+        Browse books easily by category.
+      </p>
+    </div>
+
+    {/* Card 5 */}
+    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
+      <div className="text-3xl mb-3">📱</div>
+      <h3 className="text-xl font-semibold">Responsive Design</h3>
+      <p className="text-gray-400 text-sm mt-2">
+        Works perfectly on mobile, tablet, and desktop.
+      </p>
+    </div>
+
+    {/* Card 6 */}
+    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
+      <div className="text-3xl mb-3">🌍</div>
+      <h3 className="text-xl font-semibold">24/7 Access</h3>
+      <p className="text-gray-400 text-sm mt-2">
+        Access your library anytime, anywhere.
+      </p>
+    </div>
+
+  </div>
+</section>
 
     </div>
   );
