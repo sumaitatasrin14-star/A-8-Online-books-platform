@@ -21,18 +21,15 @@ const provider = new GoogleAuthProvider();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [dark, setDark] = useState(true);
 
-  // 🔑 Login
+  // LOGIN
   const login = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
 
-  // 🔑 Register (name + photo save)
+  // REGISTER
   const register = async (email, password, name, photo) => {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
     await updateProfile(userCredential.user, {
       displayName: name,
@@ -42,13 +39,24 @@ export const AuthProvider = ({ children }) => {
     return userCredential;
   };
 
-  // 🔑 Google login
+  // GOOGLE LOGIN
   const googleLogin = () => signInWithPopup(auth, provider);
 
-  // 🔑 Logout
+  // LOGOUT
   const logout = () => signOut(auth);
 
-  // 🔄 user observer
+  // UPDATE PROFILE
+  const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
+
+  // THEME
+  const toggleTheme = () => setDark(!dark);
+
+  // USER OBSERVER
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -58,7 +66,16 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, login, register, googleLogin, logout }}
+      value={{
+        user,
+        login,
+        register,
+        googleLogin,
+        logout,
+        updateUserProfile,
+        dark,
+        toggleTheme,
+      }}
     >
       {children}
     </AuthContext.Provider>
