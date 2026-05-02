@@ -11,19 +11,19 @@ export default function Register() {
   const [error, setError] = useState("");
 
   const handleRegister = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const name = e.target.name.value;
-    const photo = e.target.photo.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+  const name = e.target.name.value;
+  const photo = e.target.photo.value;
+  const email = e.target.email.value;
+  const password = e.target.password.value;
 
-    register(email, password)
-      .then(() => {
-        router.push("/login");
-      })
-      .catch((err) => setError(err.message));
-  };
+  register(email, password, name, photo)
+    .then(() => {
+      router.push("/login");
+    })
+    .catch((err) => setError(err.message));
+};
 
   const handleGoogle = () => {
     googleLogin()
