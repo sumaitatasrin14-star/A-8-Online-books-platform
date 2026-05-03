@@ -12,10 +12,10 @@ export default function Profile() {
     useContext(AuthContext);
 
   const [name, setName] = useState(user?.displayName || "");
-  const [photo, setPhoto] = useState(user?.photoURL || "");
+  const [Email, setEmail] = useState(user?.email || "");
 
   const handleUpdate = () => {
-    updateUserProfile(name, photo)
+    updateUserProfile(name, Email)
       .then(() => toast.success("Profile Updated"))
       .catch(() => toast.error("Update Failed"));
   };
@@ -93,10 +93,10 @@ export default function Profile() {
                 />
 
                 <input
-                  value={photo}
-                  onChange={(e) => setPhoto(e.target.value)}
+                  value={Email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full p-2 mb-2 text-white border-2"
-                  placeholder="Photo URL"
+                  placeholder="Email"
                 />
 
                 <button

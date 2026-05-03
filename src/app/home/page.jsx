@@ -1,87 +1,63 @@
+"use client";
 
 import Banner from "@/components/Banner.jsx";
 
+
 const HomePage = () => {
   return (
-    <div className="space-y-16">
+    <div className="bg-gray-950 text-white space-y-20 pb-20">
 
-      {/* Banner (only Home) */}
+      {/* 🎬 HERO BANNER */}
       <Banner />
-      <marquee className="bg-blue-500 text-white py-3 text-lg">
-        New Arrivals: Atomic Habits | Clean Code | The Alchemist |
-        Special Discount on Memberships 🔥
-      </marquee>
-      {/* Featured Books Section */}
-      <section className="max-w-6xl mx-auto text-center text-white mt-20">
 
-  {/* Title */}
-  <h2 className="text-4xl font-bold mb-4">
-    Why Choose <span className="text-blue-400">BookSphere</span>?
-  </h2>
+      
+      
 
-  <p className="text-gray-400 mb-12 max-w-xl mx-auto">
-    A modern digital library platform designed for speed, simplicity, and convenience.
-  </p>
+      {/* 🔥 MARQUEE (NOTICE BAR) */}
+      <div className="bg-blue-600 py-3 text-center text-lg font-medium shadow-lg">
+        <marquee>
+          🚀 New Arrivals: Atomic Habits | Clean Code | The Alchemist |
+          Special Discount on Memberships 🔥
+        </marquee>
+      </div>
 
-  {/* Feature Cards */}
-  <div className="grid md:grid-cols-3 gap-6">
+      {/* ⭐ FEATURES SECTION */}
+      <section className="max-w-6xl mx-auto text-center px-4">
 
-    {/* Card 1 */}
-    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
-      <div className="text-3xl mb-3">🔍</div>
-      <h3 className="text-xl font-semibold">Fast Search</h3>
-      <p className="text-gray-400 text-sm mt-2">
-        Quickly find books by title, category, or author.
-      </p>
-    </div>
+        {/* Title */}
+        <h2 className="text-4xl font-bold mb-4">
+          Why Choose <span className="text-blue-400">BookSphere</span>?
+        </h2>
 
-    {/* Card 2 */}
-    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
-      <div className="text-3xl mb-3">📚</div>
-      <h3 className="text-xl font-semibold">Easy Borrow</h3>
-      <p className="text-gray-400 text-sm mt-2">
-        Borrow books instantly with one click.
-      </p>
-    </div>
+        <p className="text-gray-400 mb-12 max-w-xl mx-auto">
+          A modern digital library platform designed for speed, simplicity, and convenience.
+        </p>
 
-    {/* Card 3 */}
-    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
-      <div className="text-3xl mb-3">🔐</div>
-      <h3 className="text-xl font-semibold">Secure Login</h3>
-      <p className="text-gray-400 text-sm mt-2">
-        Safe authentication with protected routes.
-      </p>
-    </div>
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-6">
 
-    {/* Card 4 */}
-    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
-      <div className="text-3xl mb-3">📂</div>
-      <h3 className="text-xl font-semibold">Category Filter</h3>
-      <p className="text-gray-400 text-sm mt-2">
-        Browse books easily by category.
-      </p>
-    </div>
+          {[
+            { icon: "🔍", title: "Fast Search", desc: "Quickly find books by title, category, or author." },
+            { icon: "📚", title: "Easy Borrow", desc: "Borrow books instantly with one click." },
+            { icon: "🔐", title: "Secure Login", desc: "Safe authentication with protected routes." },
+            { icon: "📂", title: "Category Filter", desc: "Browse books easily by category." },
+            { icon: "📱", title: "Responsive Design", desc: "Works perfectly on all devices." },
+            { icon: "🌍", title: "24/7 Access", desc: "Access your library anytime, anywhere." },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 hover:bg-white/10 transition duration-300 shadow-md"
+            >
+              <div className="text-4xl mb-3">{item.icon}</div>
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p className="text-gray-400 text-sm mt-2">
+                {item.desc}
+              </p>
+            </div>
+          ))}
 
-    {/* Card 5 */}
-    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
-      <div className="text-3xl mb-3">📱</div>
-      <h3 className="text-xl font-semibold">Responsive Design</h3>
-      <p className="text-gray-400 text-sm mt-2">
-        Works perfectly on mobile, tablet, and desktop.
-      </p>
-    </div>
-
-    {/* Card 6 */}
-    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-105 transition">
-      <div className="text-3xl mb-3">🌍</div>
-      <h3 className="text-xl font-semibold">24/7 Access</h3>
-      <p className="text-gray-400 text-sm mt-2">
-        Access your library anytime, anywhere.
-      </p>
-    </div>
-
-  </div>
-</section>
+        </div>
+      </section>
 
     </div>
   );

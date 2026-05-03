@@ -1,5 +1,27 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  background: rgba(0, 0, 0, 0.5);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
 
+.swiper-button-prev {
+  left: 10px;
+}
 
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: gray;
+}
