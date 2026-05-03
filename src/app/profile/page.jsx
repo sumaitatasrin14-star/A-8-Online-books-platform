@@ -12,12 +12,28 @@ export default function Profile() {
     useContext(AuthContext);
 
   const [name, setName] = useState(user?.displayName || "");
-  const [Email, setEmail] = useState(user?.email || "");
+  const [photo, setPhoto] = useState(user?.photoURL || "");
 
+  // ✅ SAFE IMAGE (fix Invalid URL error)
+  const getSafeImage = (url) => {
+    if (!url || typeof url !== "string") return "/default.png";
+
+    if (
+      url.startsWith("http://") ||
+      url.startsWith("https://") ||
+      url.startsWith("/")
+    ) {
+      return url;
+    }
+
+    return "/default.png";
+  };
+
+  // ✅ UPDATE PROFILE (only name + photo)
   const handleUpdate = () => {
-    updateUserProfile(name, Email)
-      .then(() => toast.success("Profile Updated"))
-      .catch(() => toast.error("Update Failed"));
+    updateUserProfile(name, photo)
+      .then(() => toast.success("Profile Updated 🎉"))
+      .catch(() => toast.error("Update Failed ❌"));
   };
 
   return (
@@ -50,29 +66,28 @@ export default function Profile() {
               className="bg-white/10 p-6 rounded-2xl text-center"
             >
               <div className="flex justify-center">
-  <div className="p-1 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500">
-    
-    <Image
-      src={user?.photoURL || "/default.png"}
-      width={90}
-      height={90}
-      alt=""
-     className="rounded-full object-cover border-4 border-black shadow-lg 
-           hover:scale-105 transition duration-300"
-    />
+                <div className="p-1 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500">
+                  
+                  <Image
+                    src={getSafeImage(user?.photoURL)}
+                    width={90}
+                    height={90}
+                    alt="Profile"
+                    className="rounded-full object-cover border-4 border-black shadow-lg hover:scale-105 transition duration-300"
+                  />
 
-  </div>
-</div>
+                </div>
+              </div>
 
               <h2 className="mt-3 text-xl font-bold">
-                {user?.displayName}
+                {user?.displayName || "User"}
               </h2>
 
               <p className="text-gray-400">{user?.email}</p>
 
               <button
-                onClick={() => logout()}
-                className="mt-4 bg-red-500 px-4 py-2 rounded-lg"
+                onClick={logout}
+                className="mt-4 bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600 transition"
               >
                 Logout
               </button>
@@ -85,37 +100,39 @@ export default function Profile() {
               <div className="bg-white/10 p-6 rounded-xl">
                 <h2 className="text-xl font-bold mb-3">Edit Profile</h2>
 
+                {/* NAME */}
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full p-2 mb-2 text-White border-2"
+                  className="w-full p-3 mb-3 text-white border border-white/20 rounded-lg bg-white/10"
                   placeholder="Name"
                 />
 
+                {/* PHOTO URL */}
                 <input
-                  value={Email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-2 mb-2 text-white border-2"
-                  placeholder="Email"
+                  value={photo}
+                  onChange={(e) => setPhoto(e.target.value)}
+                  className="w-full p-3 mb-3 text-white border border-white/20 rounded-lg bg-white/10"
+                  placeholder="Photo URL"
                 />
 
                 <button
                   onClick={handleUpdate}
-                  className="bg-green-500 px-4 py-2 rounded-lg"
+                  className="bg-green-500 px-4 py-2 rounded-lg hover:bg-green-600 transition"
                 >
-                  Save
+                  Save Changes
                 </button>
               </div>
 
               {/* STATS */}
               <div className="grid grid-cols-2 gap-4">
 
-                <div className="bg-white/10 p-4 rounded-xl">
+                <div className="bg-white/10 p-4 rounded-xl text-center">
                   <p>Books</p>
                   <h2 className="text-2xl font-bold">12</h2>
                 </div>
 
-                <div className="bg-white/10 p-4 rounded-xl">
+                <div className="bg-white/10 p-4 rounded-xl text-center">
                   <p>Login</p>
                   <h2 className="text-2xl font-bold">5</h2>
                 </div>
